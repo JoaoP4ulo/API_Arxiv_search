@@ -4,7 +4,7 @@ import smtplib
 import email.message
 import src.utils as utils
 import sqlite3
-from main import usuario_dao,artigo_dao,senha,email_from
+import app
 
 #funções chamadas pelo menu principal
 
@@ -23,11 +23,11 @@ def menu_principal():
         opcao = input('\n  Digite a opção desejada: ')
 
         if opcao == '1':
-            menu_fazer_login(usuario_dao,artigo_dao)
+            menu_fazer_login(app.usuario_dao,app.artigo_dao)
         elif opcao == '2':
-            menu_recuperar_senha(usuario_dao,senha)
+            menu_recuperar_senha(app.usuario_dao,app.senha)
         elif opcao == '3':
-            menu_cadastrar_usuario(usuario_dao)
+            menu_cadastrar_usuario(app.usuario_dao)
         elif opcao == '4':
             print('\n\n  Saindo do sistema ...')
             break
@@ -69,7 +69,7 @@ def menu_cadastrar_usuario(usuario_dao):
 
     usuario = Usuario(cpf, nome, email, senha)
 
-    usuario_dao.cadasrar_usuatrio(usuario)
+    usuario_dao.cadastrar_usuario(usuario)
 
     print('\n\n  Usuario cadastrado com sucesso!')
 
@@ -118,6 +118,6 @@ def menu_recuperar_senha(usuario_dao,senha_app):
     
     nova_senha = utils.gerar_nova_senha()
 
-    utils.mandar_email(email_from,e_mail,senha,nova_senha,'Recuperacao de Senha',usuario_existente)
+    utils.mandar_email(app.email_from,e_mail,app.senha,nova_senha,'Recuperacao de Senha',usuario_existente)
 
 

@@ -1,7 +1,7 @@
 import sqlite3
 from src.classes_dao import UsuarioDAO, ArtigoDAO
 from src.classes_base import Usuario, Artigo
-from main import usuario_dao,artigo_dao,senha
+import app
 
 
 #funções chamdas pelo menu de usuario
@@ -21,11 +21,11 @@ def menu_sistema(usuario_existente):
         opcao = input('\n  Digite a opção desejada: ')
 
         if opcao == '1':
-            sistema_fazer_busca(artigo_dao,usuario_existente)
+            sistema_fazer_busca(app.artigo_dao,usuario_existente)
         elif opcao == '2':
-            sistema_listar_artigos(artigo_dao)
+            sistema_listar_artigos(app.artigo_dao)
         elif opcao == '3':
-            atualizar_dados(usuario_dao,usuario_existente)
+            atualizar_dados(app.usuario_dao,usuario_existente)
         elif opcao == '4':
             print('\n\n  Saindo do sistema ...')
             break

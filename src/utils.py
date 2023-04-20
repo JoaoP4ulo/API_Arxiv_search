@@ -4,12 +4,12 @@ from random import choice
 import urllib, urllib.request
 import smtplib
 import email.message
-from main import usuario_dao
+import app
 
 
 #funções que não envolvem diretamente o banco de dados
 
-def criar_bancodados(db_path):   
+def criar_banco_de_dados(db_path):   
 
     conexao = sqlite3.connect(db_path)
 
@@ -74,7 +74,7 @@ def mandar_email(email_from:str,email_to:str,senha_app:str,nova_senha:str,assunt
 
     usuario_existente.set_senha(nova_senha)
     
-    conexao = sqlite3.connect(usuario_dao.db_path)
+    conexao = sqlite3.connect(app.usuario_dao.db_path)
 
     cursor = conexao.cursor()
 
