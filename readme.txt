@@ -1,27 +1,27 @@
-A ideia deste projeto é desenvolver usando a linguagem de programação Python um
-sistema de recuperação de artigos científicos usando a Application Programming
-Interface (API) do Arxiv1. O Arxiv é um repositório contendo artigos científicos de
-diversas áreas do conhecimento como, Matemática, Engenharia, Computação, Física,
-entre outros. 
+The idea of this project is to develop using the Python programming language a
+scientific article retrieval system using Application Programming
+Interface (API) of Arxiv1. Arxiv is a repository containing scientific articles from
+several areas of knowledge such as Mathematics, Engineering, Computing, Physics,
+between others.
 
-Estrutura organizacional:
+Organizational structure:
 
 ---main---
-- definição de variaveis base
-- construção do data-base
-- chamada inicial 
+- definition of base variables
+- construction of the database
+- initial call
 
 ---utils---
-- funções que não envolvem o data-base
+- functions that do not involve the database
 
----classes_base---
-- definição das classes padrões
+---base_classes---
+- definition of standard classes
 
 ---classes_dao---
-- definição dos Objetos de Acesso a Dados
+- definition of Data Access Objects
 
----controlador_menu---
-- chamar as funções relacionadas ao primeiro menu
+---menu_controller---
+- call the functions related to the first menu
 
----controlador_sistema---
-- chamar as funções relacionadas ao segundo menu
+---system_controller---
+- call the functions related to the second menu
