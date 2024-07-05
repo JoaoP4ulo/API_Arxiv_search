@@ -9,8 +9,8 @@ from src.classes_dao import UsuarioDAO,ArtigoDAO
 #definição do caminho padrão do db
 db_path = 'cadastros.bd'
 #definição da senha padrão de recuperação de email
-senha = 'owtirgryroymfuig'
-email_from='jppelioterio@gmail.com'
+senha = ''
+email_from=''
 usuario_dao = UsuarioDAO(db_path)
 artigo_dao = ArtigoDAO(db_path)
 
